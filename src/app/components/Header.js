@@ -4,14 +4,14 @@ import Link from "next/link";
 export default function Header() {
     return (
         <header>
-            <Link href="/">
+            <a href="/">
                 <div className="header-logo">
                     <div className="vertical-bar"></div>
                     <div className="horizontal-bar"></div>
                     <div className="left-diagonal-bar"></div>
                     <div className="right-diagonal-bar"></div>
                 </div>
-            </Link>
+            </a>
             <Link href="/feed">Feed</Link>
         </header>
     )

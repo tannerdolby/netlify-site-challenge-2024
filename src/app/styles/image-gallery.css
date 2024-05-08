@@ -12,6 +12,7 @@
     height: 500px;
     border-radius: 2.5rem;
     min-width: 130px;
+    background: linear-gradient(#fff 50%, red 50%);
 }
 
 .image-gallery img:hover {
@@ -19,11 +20,11 @@
 }
 
 .grow-image {
-    animation: .35s ease-in-out grow;
+    animation: .325s ease-in-out grow;
 }
 
 .shrink-image {
-    animation: .35s ease-in-out shrink;
+    animation: .325s ease-in-out shrink;
 }
 
 @keyframes grow {
