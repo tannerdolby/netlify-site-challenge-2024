@@ -1,0 +1,47 @@
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .75rem;
+    width: 100%;
+}
+
+.image-gallery img {
+    object-fit: cover;
+    width: 130px;
+    height: 500px;
+    border-radius: 2.5rem;
+    min-width: 130px;
+}
+
+.image-gallery img:hover {
+    cursor: pointer;
+}
+
+.grow-image {
+    animation: .35s ease-in-out grow;
+}
+
+.shrink-image {
+    animation: .35s ease-in-out shrink;
+}
+
+@keyframes grow {
+    0% {
+        width: 130px;
+    }
+
+    100% {
+        width: 450px;
+    }
+}
+
+@keyframes shrink {
+    0% {
+        width: 450px;
+    }
+
+    100% {
+        width: 130px;
+    }
+}

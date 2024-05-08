@@ -1,0 +1,39 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin-left: .5rem;
+}
+
+/* TODO 
+.header-logo:hover {
+
+} */
+
+.vertical-bar,
+.horizontal-bar,
+.left-diagonal-bar,
+.right-diagonal-bar {
+    width: 1px;
+    height: 100%;
+    background: #07B607;
+    position: absolute;
+}
+
+.horizontal-bar {
+    transform: rotate(90deg);
+}
+
+.left-diagonal-bar {
+    transform: rotate(-45deg);
+}
+
+.right-diagonal-bar {
+    transform: rotate(45deg);
+}
