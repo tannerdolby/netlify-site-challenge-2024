@@ -20,6 +20,10 @@ async function fetchCuratedPhotos(page, perPage) {
     return await fetcher(`${process.env.PEXELS_API_URL}/curated?${queryParams}`);
 }
 
+export async function fetchPhoto(id) {
+    return await fetcher(`${process.env.PEXELS_API_URL}/photos/${id}`);
+}
+
 export default async function Page() {
     const data = await fetchCuratedPhotos(1, 20);
 

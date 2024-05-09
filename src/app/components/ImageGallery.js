@@ -1,5 +1,6 @@
 "use client";
 
+import gsap from 'gsap';
 import Image from 'next/image';
 import "../styles/image-gallery.css";
 
@@ -15,19 +16,13 @@ export default function ImageGallery({ data }) {
                         width={200}
                         height={500}
                         title={image.title}
-                        priority
-                        className="featured-image"
+                        id={`image-${image.id}`}
+                        className={`featured-image`}
                         onClick={(e) => {
-                            animateImageWidth(e);
-                            shrinkAllButGrown(e);
+                            animateImageWidth(e, image);
+                            shrinkAllButGrown(e, image);
                         }}
-                        onAnimationEnd={(e) => {
-                            if ([...e.target.classList].includes('grow-image')) {
-                                e.target.style.width = '450px';
-                            } else {
-                                e.target.style.width = '130px';
-                            }
-                        }}
+                        priority
                     />
                 </li>
             ))}
@@ -35,22 +30,37 @@ export default function ImageGallery({ data }) {
     )
 }
 
-function animateImageWidth(e) {
+function animateImageWidth(e, image) {
     if ([...e.target.classList].includes('grow-image')) {
         e.target.classList.add('shrink-image');
         e.target.classList.remove('grow-image');
+        gsap.to(`#image-${image.id}`, {
+            width: 130,
+            ease: 'power4',
+            duration: .5
+        })
     } else {
         e.target.classList.remove('shrink-image');
         e.target.classList.add('grow-image');
+        gsap.to(`#image-${image.id}`, {
+            width: 425,
+            ease: 'power4',
+            duration: .5,
+        })
     }
 }
 
 function shrinkAllButGrown(e) {
     const images = [...document.querySelectorAll('.featured-image')];
-    for (const img of images) {
-        if (img != e.target && [...img.classList].includes('grow-image')) {
-            img.classList.remove('grow-image');
-            img.classList.add('shrink-image');
+    for (const image of images) {
+        if (image != e.target && [...image.classList].includes('grow-image')) {
+            image.classList.remove('grow-image');
+            image.classList.add('shrink-image');
+            gsap.to(`#${image.id}`, {
+                width: 130,
+                ease: 'power4',
+                duration: .5
+            });
         }
     }
 }
