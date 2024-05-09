@@ -4,8 +4,9 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Link from "next/link";
 
+
 export default async function Page({ params }) {
-    const photo = await fetchPhoto(params.id);
+    const photo = await fetchPhoto(params?.id);
 
     return (
         <>

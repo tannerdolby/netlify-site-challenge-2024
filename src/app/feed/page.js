@@ -31,7 +31,6 @@ export default async function Page() {
         <>
             <Header />
             <main>
-                {/* TODO: Curated feed infinite scroll */}
                 <Feed data={data} />
             </main>
             <Footer />
