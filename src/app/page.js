@@ -3,16 +3,16 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 
 export async function fetcher(url) {
-  try {
-      const res = await fetch(url, {
-          headers: {
-              'Authorization': process.env.PEXELS_API_KEY,
-          }
-      });
-      return await res.json();
-  } catch (err) {
-      console.error(err);
-  }
+  // try {
+  const res = await fetch(url, {
+    headers: {
+      'Authorization': process.env.PEXELS_API_KEY,
+    }
+  });
+  return await res.json();
+  // } catch (err) {
+  //     console.error(err);
+  // }
 }
 
 export async function fetchCuratedPhotos(page, perPage) {
