@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Header() {
     return (
         <header>
-            <a href="/">
+            <a href="/" aria-label="homepage link">
                 <div className="header-logo">
                     <div className="vertical-bar"></div>
                     <div className="horizontal-bar"></div>
