@@ -7,15 +7,15 @@ export default async function Page() {
   const photoIds = [1820770, 19961796, 2376799, 19887907, 2901581];
   const photos = [];
 
-  for (const id of photoIds) {
-    // photos.push(await fetchPhoto(id));
+  for (const photoId of photoIds) {
+    photos.push(await fetchPhoto(photoId));
   }
 
   return (
     <>
       <Header />
       <main className="flex p-4">
-        {/* <ImageGallery data={photos} /> */}
+        <ImageGallery data={photos} />
       </main>
       <Footer />
     </>
