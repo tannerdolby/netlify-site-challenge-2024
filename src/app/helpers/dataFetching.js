@@ -8,7 +8,6 @@ export async function fetcher(url) {
         return await res.json();
     } catch (err) {
         console.error(err);
-        throw err;
     }
 }
 

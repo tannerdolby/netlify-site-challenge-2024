@@ -1,7 +1,7 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Feed from "../components/Feed";
-import {fetchCuratedPhotos} from "../helpers/dataFetching";
+import {fetchCuratedPhotos} from "../page";
 
 export default async function Page() {
     const data = await fetchCuratedPhotos(1, 20);
