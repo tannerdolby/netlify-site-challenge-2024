@@ -4,13 +4,13 @@ import Feed from "../components/Feed";
 import {fetchCuratedPhotos} from "../helpers/dataFetching";
 
 export default async function Page() {
-    // const data = await fetchCuratedPhotos(1, 20);
+    const data = await fetchCuratedPhotos(1, 20);
 
     return (
         <>
             <Header />
             <main>
-                {/* <Feed data={data} /> */}
+                <Feed data={data} />
             </main>
             <Footer />
         </>
