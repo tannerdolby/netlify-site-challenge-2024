@@ -10,16 +10,16 @@ export default async function Page({ params }) {
     return (
         <>
             <Header />
-            <main className="flex justify-around items-center w-full">
+            <main className="flex justify-center items-center w-full my-6">
                 <Image
-                    src={photo.src.landscape}
+                    src={photo.src.portrait}
                     alt={photo.alt}
                     width={640}
                     height={450}
-                    className="rounded-sm"
+                    className="rounded-sm max-h-[500px]"
 
                 />
-                <h1 className="max-w-[30ch] mt-4">{photo.alt} by {photo.photographer} on <Link href={photo.url}>Pexels</Link></h1>
+                <h1 className="max-w-[30ch] mt-4 ml-8">{photo.alt} by {photo.photographer} on <Link href={photo.url}>Pexels</Link></h1>
             </main>
             <Footer />
         </>
