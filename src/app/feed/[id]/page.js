@@ -1,12 +1,12 @@
-import { fetchPhoto } from "../page";
+import { fetchPhoto } from "../../helpers/dataFetching";
 import Image from 'next/image';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Link from "next/link";
 
-
-export default async function Page({ params }) {
-    const photo = await fetchPhoto(params?.id);
+export default async function Page({ params={} }) {
+    const {id} = params;
+    const photo = await fetchPhoto(id);
 
     return (
         <>
