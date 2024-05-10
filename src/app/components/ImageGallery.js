@@ -10,7 +10,7 @@ export default function ImageGallery({ data }) {
             {data?.map((image) => (
                 <li key={image.id}>
                     <Image
-                        tabIndex={-1}
+                        tabIndex={0}
                         src={image.src.original}
                         alt={image.alt}
                         width={200}
@@ -21,6 +21,12 @@ export default function ImageGallery({ data }) {
                         onClick={(e) => {
                             animateImageWidth(e, image);
                             shrinkAllButGrown(e, image);
+                        }}
+                        onKeyUp={(e) => {
+                            if (e.key === 'Enter') {
+                                animateImageWidth(e, image);
+                                shrinkAllButGrown(e, image);
+                            }
                         }}
                         priority
                     />
@@ -37,7 +43,7 @@ function animateImageWidth(e, image) {
         gsap.to(`#image-${image.id}`, {
             width: 130,
             ease: 'power4',
-            duration: .5
+            duration: .6
         })
     } else {
         e.target.classList.remove('shrink-image');
@@ -45,7 +51,7 @@ function animateImageWidth(e, image) {
         gsap.to(`#image-${image.id}`, {
             width: 425,
             ease: 'power4',
-            duration: .5,
+            duration: .6,
         })
     }
 }
@@ -59,7 +65,7 @@ function shrinkAllButGrown(e) {
             gsap.to(`#${image.id}`, {
                 width: 130,
                 ease: 'power4',
-                duration: .5
+                duration: .6
             });
         }
     }

@@ -19,7 +19,11 @@ export default async function Page({ params={} }) {
                     className="rounded-sm max-h-[500px]"
 
                 />
-                <h1 className="max-w-[30ch] mt-4 ml-8">{photo.alt} by {photo.photographer} on <Link href={photo.url}>Pexels</Link></h1>
+                <h1
+                    className="max-w-[30ch] mt-4 ml-8"
+                >
+                    {photo.alt} by {photo.photographer} on <Link href={photo.url}>Pexels</Link>
+                </h1>
             </main>
             <Footer />
         </>
