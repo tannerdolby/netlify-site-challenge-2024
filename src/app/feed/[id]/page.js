@@ -4,21 +4,23 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Link from "next/link";
 
-export default async function Page({ params={} }) {
+export default async function Page({ params = {} }) {
     const photo = await fetchPhoto(params?.id);
 
     return (
         <>
             <Header />
-            <main className="flex justify-center items-center w-full my-6">
-                <Image
-                    src={photo.src.portrait}
-                    alt={photo.alt}
-                    width={640}
-                    height={450}
-                    className="rounded-sm max-h-[500px]"
-
-                />
+            <main className="flex flex-wrap justify-center items-center w-full my-6">
+                <div className="w-[333px] h-[500px]">
+                    <Image
+                        src={photo.src.portrait}
+                        alt={photo.alt}
+                        width={640}
+                        height={450}
+                        className="rounded-sm max-h-[500px]"
+                        priority
+                    />
+                </div>
                 <h1
                     className="max-w-[30ch] mt-4 ml-8"
                 >
