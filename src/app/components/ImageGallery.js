@@ -43,7 +43,7 @@ function animateImageWidth(e, image) {
         gsap.to(`#image-${image.id}`, {
             width: 130,
             ease: 'power4',
-            duration: .6
+            duration: .5
         })
     } else {
         e.target.classList.remove('shrink-image');
@@ -51,7 +51,7 @@ function animateImageWidth(e, image) {
         gsap.to(`#image-${image.id}`, {
             width: 425,
             ease: 'power4',
-            duration: .6,
+            duration: .5,
         })
     }
 }
@@ -65,7 +65,7 @@ function shrinkAllButGrown(e) {
             gsap.to(`#${image.id}`, {
                 width: 130,
                 ease: 'power4',
-                duration: .6
+                duration: .5
             });
         }
     }
