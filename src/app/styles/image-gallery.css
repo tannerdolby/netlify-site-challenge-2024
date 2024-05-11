@@ -17,25 +17,19 @@
 @media (max-width: 850px) {
     .image-gallery img {
         min-width: 60px;
+        border-radius: 1.5rem;
     }
 }
 
 @media (max-width: 500px) {
     .image-gallery img {
         min-width: 30px;
+        border-radius: 1rem;
     }
 }
 
 .image-gallery img:hover {
     cursor: pointer;
-}
-
-.grow-image {
-    /* animation: .325s ease-in-out grow; */
-}
-
-.shrink-image {
-    /* animation: .325s ease-in-out shrink; */
 }
 
 @keyframes grow {
